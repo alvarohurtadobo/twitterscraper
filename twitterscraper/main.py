@@ -103,9 +103,12 @@ def main():
         if args.user:
             tweets = query_tweets_from_user(user = args.query, limit = args.limit)
         else:
-            tweets = query_tweets(query = args.query, limit = args.limit,
-                              begindate = args.begindate, enddate = args.enddate,
-                              poolsize = args.poolsize, lang = args.lang)
+            tweets = query_tweets(query = args.query,
+                                    limit = args.limit,
+                                    begindate = args.begindate,
+                                    enddate = args.enddate,
+                                    poolsize = args.poolsize, 
+                                    lang = args.lang)
 
         if args.dump:
             pprint([tweet.__dict__ for tweet in tweets])
